@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  host: MyString
+  path: MyString
+  interval: 1
+
+two:
+  host: MyString
+  path: MyString
+  interval: 1
