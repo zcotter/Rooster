@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814021459) do
+ActiveRecord::Schema.define(:version => 20130815003257) do
 
   create_table "targets", :force => true do |t|
     t.string   "host"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130814021459) do
     t.integer  "interval"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "next_run"
   end
 
 end
