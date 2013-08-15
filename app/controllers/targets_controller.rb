@@ -25,7 +25,6 @@ class TargetsController < ApplicationController
   # GET /targets/new.json
   def new
     @target = Target.new
-    @target.set_next_run(0)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @target }
@@ -41,7 +40,6 @@ class TargetsController < ApplicationController
   # POST /targets.json
   def create
     @target = Target.new(params[:target])
-    @target.set_next_run(0)
     respond_to do |format|
       if @target.save
         format.html { redirect_to @target, notice: 'Target was successfully created.' }
@@ -57,7 +55,6 @@ class TargetsController < ApplicationController
   # PUT /targets/1.json
   def update
     @target = Target.find(params[:id])
-    @target.set_next_run(0)
     respond_to do |format|
       if @target.update_attributes(params[:target])
         format.html { redirect_to @target, notice: 'Target was successfully updated.' }
