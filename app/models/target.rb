@@ -2,7 +2,7 @@ require 'net/http'
 class Target < ActiveRecord::Base
   attr_accessible :host, :interval, :path, :next_run
   validates :host, presence: true,
-                   format: {with: /\A(\w|[\.])*\z/,
+                   format: {with: /\A(\w|[\[.-])*\z/,
                             message: "only allows letters, numbers, _ and ."}
   validates :interval, presence: true,
                        numericality: {only_integer: true,
