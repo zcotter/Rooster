@@ -18,7 +18,7 @@
 
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Rooster", '#', :class => 'brand' %></li>
+          <li><%= link_to "Rooster", about_path, :class => 'brand' %></li>
 
           <% if user_signed_in? %>
               <li>
@@ -38,7 +38,7 @@
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
-          <li><%= link_to "What is Rooster?", '#'%></li>
+          <li><%= link_to "What is Rooster?", about_path%></li>
         </ul>
       </div>
     </div>
