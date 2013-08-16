@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :interval %><br />
-    <%= f.number_field :interval %>
+    <%= f.number_field :interval, :min => 15, :value => 15, :step => 15 %>
   </div>
   <div class="actions">
     <%= f.submit %>
