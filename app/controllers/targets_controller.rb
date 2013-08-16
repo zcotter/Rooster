@@ -16,17 +16,6 @@ class TargetsController < ApplicationController
     end
   end
 
-  # GET /targets/1
-  # GET /targets/1.json
-  def show
-    @target = @user.targets.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @target }
-    end
-  end
-
   # GET /targets/new
   # GET /targets/new.json
   def new
@@ -49,7 +38,7 @@ class TargetsController < ApplicationController
     @target = @user.targets.build(params[:target])
     respond_to do |format|
       if @target.save
-        format.html { redirect_to @target, notice: 'Target was successfully created.' }
+        format.html { redirect_to targets_url, notice: 'Target was successfully created.' }
         format.json { render json: @target, status: :created, location: @target }
       else
         format.html { render action: "new" }
@@ -64,7 +53,7 @@ class TargetsController < ApplicationController
     @target = @user.targets.find(params[:id])
     respond_to do |format|
       if @target.update_attributes(params[:target])
-        format.html { redirect_to @target, notice: 'Target was successfully updated.' }
+        format.html { redirect_to targets_url, notice: 'Target was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
