@@ -1,6 +1,27 @@
 @import "twitter/bootstrap/bootstrap";
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+.logo {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: -70px;
+  height: 50px;
+  width: 50px;
+}
 @import "twitter/bootstrap/responsive";
-
+@navbarBackground: @red;
+@navbarBackgroundHighlight: #D71414;
+@navbarLinkColor: lighten(@grayLight, 20%);
+@navbarText: @navbarLinkColor;
+@navbarLinkColorHover: @white;
+@navbarLinkColorActive: @white;
+@bodyBackground: lighten(#C28851, 10%);
 // Set the correct sprite paths
 @iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
 @iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
