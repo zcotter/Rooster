@@ -1,27 +1,17 @@
-<h1>Listing targets</h1>
-
-<table>
-  <tr>
-    <th>Host</th>
-    <th>Path</th>
-    <th>Interval</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Targets</h1>
+<h4>Each of the following addresses will be repeatedly visited on the specified interval.</h4>
+<% counter = 0 %>
 <% @targets.each do |target| %>
-  <tr>
-    <td><%= target.host %></td>
-    <td><%= target.path %></td>
-    <td><%= target.interval %></td>
-    <td><%= link_to 'Show', target %></td>
-    <td><%= link_to 'Edit', edit_target_path(target) %></td>
-    <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <% counter += 1 %>
+    <h5>
+      <%= "#{counter}. #{target.host}#{target.path} will be visited every #{target.interval} minutes." %>
+      <%= link_to 'Edit', edit_target_path(target), :class => "btn btn-mini btn-danger" %>
+      <%= link_to 'Delete', target, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-mini btn-danger" %>
+    </h5>
+
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Target', new_target_path %>
+<br/>
+
+<%= link_to 'Add Another Target', new_target_path, :class => "btn btn-large btn-danger" %>
