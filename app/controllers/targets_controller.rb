@@ -1,8 +1,14 @@
 class TargetsController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :setup_user
+
+  def setup_user
+    @user = current_user
+  end
   # GET /targets
   # GET /targets.json
   def index
-    @targets = Target.all
+    @targets = @user.targets.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +19,7 @@ class TargetsController < ApplicationController
   # GET /targets/1
   # GET /targets/1.json
   def show
-    @target = Target.find(params[:id])
+    @target = @user.targets.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,6 +30,7 @@ class TargetsController < ApplicationController
   # GET /targets/new
   # GET /targets/new.json
   def new
+
     @target = Target.new
     respond_to do |format|
       format.html # new.html.erb
@@ -33,13 +40,13 @@ class TargetsController < ApplicationController
 
   # GET /targets/1/edit
   def edit
-    @target = Target.find(params[:id])
+    @target = @user.targets.find(params[:id])
   end
 
   # POST /targets
   # POST /targets.json
   def create
-    @target = Target.new(params[:target])
+    @target = @user.targets.build(params[:target])
     respond_to do |format|
       if @target.save
         format.html { redirect_to @target, notice: 'Target was successfully created.' }
@@ -54,7 +61,7 @@ class TargetsController < ApplicationController
   # PUT /targets/1
   # PUT /targets/1.json
   def update
-    @target = Target.find(params[:id])
+    @target = @user.targets.find(params[:id])
     respond_to do |format|
       if @target.update_attributes(params[:target])
         format.html { redirect_to @target, notice: 'Target was successfully updated.' }
@@ -69,7 +76,7 @@ class TargetsController < ApplicationController
   # DELETE /targets/1
   # DELETE /targets/1.json
   def destroy
-    @target = Target.find(params[:id])
+    @target = @user.targets.find(params[:id])
     @target.destroy
 
     respond_to do |format|
