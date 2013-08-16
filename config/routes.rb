@@ -1,4 +1,10 @@
 Rooster::Application.routes.draw do
+  get "info/about"
+
+  get "info/contact"
+
+  get "info/license"
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
 
