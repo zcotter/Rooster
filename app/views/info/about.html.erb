@@ -1,3 +1,40 @@
-<h1>What is Rooster?</h1>
-<p>About Blah Blah Blah
-include contact info, github links, etc</p>
+<h1>Rooster</h1>
+<p class="lead">The alarm clock for your shared-hosting web apps.</p>
+<h3>What is Rooster?</h3>
+<p style="font-size: 125%;line-height: 125%">
+  Rooster is a free service that visits web pages on a recurring schedule. You supply rooster with a list of “targets” -
+  web addresses and schedules that determine when and where each site should be visited.
+</p>
+<h3>How can Rooster benefit my shared-hosting web application? </h3>
+<p style="font-size: 125%;line-height: 125%">
+  Many shared-hosting VPS providers will put your application to sleep if it
+  has no activity over a certain amount of time. This results in a significant “wake-up” time (usually 10 - 30 seconds)
+  when a user tries to visit the site while it’s asleep. To prevent this, you can schedule Rooster to visit your site on
+  a recurring interval to wake it up or stop it from sleeping altogether.
+</p>
+<h3>How often can Rooster visit my site? </h3>
+<p style="font-size: 125%;line-height: 125%">
+  Currently, the minimum allowed interval between visits is 15 minutes. The
+  maximum interval between visits is significantly greater than the time until the sun expands past the orbit of earth
+  (in about 6 billion years). Intervals must be divisible by 15. Support for more complicated scheduling may be added
+  later, but for now I don’t want to deal with timezones, days of the week, etc.
+</p>
+<h3>When will Rooster visit my site for the first time? </h3>
+<p style="font-size: 125%;line-height: 125%">
+  Rooster will visit your site for the first time at the next quarter hour
+  after you create a target. For example, let’s say you create a target at 9:33 AM that points to www.github.com\zcotter
+  with an interval of 45 minutes. Rooster will first visit the site at 9:45 AM, then again at 10:30, 11:15, etc.
+</p>
+<h3>How does Rooster visit my site? </h3>
+<p style="font-size: 125%;line-height: 125%">
+  Rooster uses Ruby’s net/http get function to “visit” web pages. This is
+  similar to running wget or navigating to the page using your browser’s “view source” utility. The data retrieved
+  from your site is discarded (although it may stick around in a log file for a little).
+</p>
+<h3>How can I report a bug, request a feature, add a feature myself, or contact you? </h3>
+<p style="font-size: 125%;line-height: 125%">
+  You can email me at zach@zachcotter.com or open an issue on github at
+  github.com/zcotter/Rooster. If you would like to contribute to Rooster yourself, you are more than welcome to fork my
+  github repo and open a pull request.
+</p>
+
