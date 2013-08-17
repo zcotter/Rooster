@@ -9,7 +9,7 @@ class TargetsController < ApplicationController
   # GET /targets.json
   def index
     @targets = @user.targets.all
-
+    @numTargets = @targets.length
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @targets }
