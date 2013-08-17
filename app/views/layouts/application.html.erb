@@ -26,9 +26,15 @@
                   Logged in as <strong><%= current_user.email %></strong>.
                 </p>
               </li>
-              <li><%= link_to "My Targets", targets_path %></li>
-              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <li><a href="<%= targets_path %>">
+                <i class="icon-home icon-white"></i> My Targets
+              </a></li>
+              <li><a href="<%= edit_user_registration_path %>">
+                <i class="icon-cog icon-white"></i> Edit Profile
+              </a></li>
+              <li><a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow">
+                <i class="icon-circle-arrow-left icon-white"></i> Logout
+              </a></li>
           <% else %>
               <li>
                 <p class="navbar-text">
