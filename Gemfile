@@ -22,6 +22,7 @@ gem 'execjs'
 gem 'therubyracer', '0.11.0beta1'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails', '2.3.3'
+gem 'piwik_analytics'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
