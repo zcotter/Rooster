@@ -1,13 +1,13 @@
 <h1>Targets</h1>
-<h4>Each of the following addresses will be visited repeatedly on the specified interval.</h4>
+<p class="lead">Each of the following addresses will be visited repeatedly on the specified interval.</p>
 <% counter = 0 %>
 <% @targets.each do |target| %>
     <% counter += 1 %>
-    <h5>
+    <p>
       <%= "#{counter}. #{target.host}#{target.path} will be visited every #{target.interval} minutes." %>
-      <%= link_to 'Edit', edit_target_path(target), :class => "btn btn-mini btn-danger" %>
-      <%= link_to 'Delete', target, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-mini btn-danger" %>
-    </h5>
+      <%= link_to 'Edit', edit_target_path(target), :class => "btn btn-danger" %>
+      <%= link_to 'Delete', target, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger" %>
+    </p>
 
 <% end %>
 
