@@ -61,6 +61,7 @@ GEM
     less-rails (2.3.3)
       actionpack (>= 3.1)
       less (~> 2.3.1)
+    libv8 (3.11.8.17)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -142,6 +143,7 @@ DEPENDENCIES
   execjs
   jquery-rails
   less-rails (= 2.3.3)
+  libv8 (~> 3.11.8)
   pg
   piwik_analytics
   rails (= 3.2.13)
