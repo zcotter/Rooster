@@ -14,7 +14,8 @@ gem 'whenever'
 gem 'devise'
 gem 'execjs'
 group :development do
-  gem 'therubyracer', '0.11.0beta1'
+  #uncomment for dev
+  #gem 'therubyracer', '0.11.0beta1'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -24,5 +25,6 @@ gem 'piwik_analytics'
 group :production do
   #use --without production bundle install option on windows
   gem 'libv8', '~> 3.11.8'
+  gem 'therubyracer'
 end
 
