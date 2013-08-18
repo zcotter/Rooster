@@ -13,7 +13,10 @@ gem 'jquery-rails'
 gem 'whenever'
 gem 'devise'
 gem 'execjs'
-gem 'therubyracer', '0.11.0beta1'
+group :development do
+  gem 'therubyracer', '0.11.0beta1'
+end
+
 gem 'twitter-bootstrap-rails'
 gem 'less-rails', '2.3.3'
 gem 'piwik_analytics'
