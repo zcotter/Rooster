@@ -16,7 +16,7 @@
      at path
       <%= f.text_field :path %>
      every
-      <%= f.number_field :interval, :min => 15, :value => 15, :step => 15, :style => "width: 10%;" %>
+      <%= f.number_field :interval, :min => 15, :value => @target.interval, :step => 15, :style => "width: 10%;" %>
       minutes.
     </p>
 
