@@ -4,10 +4,13 @@ class Target < ActiveRecord::Base
   belongs_to :user
   validates :host, presence: true,
                    format: {with: /\A(\w|[\[.-])*\z/,
-                            message: "only allows letters, numbers, _ and ."}
+                            message: "only allows letters, numbers, _ and ."},
+                   :allow_nil => false
   validates :interval, presence: true,
                        numericality: {only_integer: true,
-                                      greater_than_or_equal_to: 15}
+                                      greater_than_or_equal_to: 15},
+                       :allow_nil => false
+  validate :path, :allow_nil => false
   validate :validate_interval_divisible_by_15
 
 
@@ -29,7 +32,7 @@ class Target < ActiveRecord::Base
   end
 
   def validate_interval_divisible_by_15
-     if self.interval % 15 != 0
+     if self.interval.nil? or self.interval % 15 != 0
        errors.add(:interval, "must be divisible by 15")
      end
   end
