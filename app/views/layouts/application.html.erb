@@ -53,7 +53,7 @@
 </div>
 <div class="container-fluid">
   <% flash.each do |name, msg| %>
-      <div id="<%= "flash_#{name}" %>" class="alert alert-success">
+      <div id="<%= "flash_#{name}" %>" class="alert alert-danger">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= msg %>
       </div>
