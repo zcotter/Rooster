@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130817131535) do
+ActiveRecord::Schema.define(:version => 20131029175241) do
 
   create_table "targets", :force => true do |t|
     t.string   "host"
     t.string   "path"
     t.integer  "interval",   :limit => 8
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.integer  "next_run"
     t.integer  "user_id"
+    t.string   "protocol",                :default => "http"
   end
 
   create_table "users", :force => true do |t|
