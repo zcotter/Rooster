@@ -20,4 +20,4 @@ gem 'piwik_analytics'
 
 gem 'therubyracer'
 gem 'figaro'
-
+gem 'newrelic_rpm'
