@@ -28,3 +28,4 @@ group :production do
   gem 'therubyracer'
 end
 
+gem 'figaro'
