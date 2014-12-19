@@ -1,5 +1,4 @@
 Rooster::Application.routes.draw do
-  get "job/wake_scheduled"
 
   #semi-static content
   get "about", to: 'info#about'
